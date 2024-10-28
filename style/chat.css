@@ -42,6 +42,8 @@ body main .chatContainer .bubblesContainer .bubbles, body main .chatContainer .b
   border-radius: 20px;
   max-width: 80%;
   margin: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 body main .chatContainer .bubblesContainer .bubbles::after, body main .chatContainer .bubblesContainer .userBubble::after, body main .chatContainer .bubblesContainer .aiBubble::after {
   content: "";
@@ -49,6 +51,12 @@ body main .chatContainer .bubblesContainer .bubbles::after, body main .chatConta
   bottom: 15px;
   width: 20px;
   height: 20px;
+}
+body main .chatContainer .bubblesContainer .bubbles.medium-opacity, body main .chatContainer .bubblesContainer .medium-opacity.userBubble, body main .chatContainer .bubblesContainer .medium-opacity.aiBubble {
+  opacity: 0.6;
+}
+body main .chatContainer .bubblesContainer .bubbles.low-opacity, body main .chatContainer .bubblesContainer .low-opacity.userBubble, body main .chatContainer .bubblesContainer .low-opacity.aiBubble {
+  opacity: 0.2;
 }
 body main .chatContainer .bubblesContainer .aiBubble {
   background: linear-gradient(90deg, rgb(247, 189, 160) 22%, rgb(159, 99, 233) 74%, rgb(101, 125, 241) 100%);
