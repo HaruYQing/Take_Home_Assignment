@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="stylesheet" href="./style/chat.css">
   <title>Chatting | Unicorn AI</title>
 </head>
@@ -15,17 +16,28 @@
     </div>
     <div class="chatContainer">
       <div class="bubblesContainer">
-        <div class="aiBubble">something from ai</div>
-        <div class="userBubble">something user said</div>
+        <div class="aiBubble">
+          Potter ipsum wand elf parchment wingardium. Pigwidgeon hedwig armchairs elemental teacup tell. Dungeons thieves kiss red patronum dirigible treats cursed petrificus three.
+        </div>
+        <div class="userBubble">
+          Potter ipsum wand elf parchment wingardium. Pigwidgeon hedwig armchairs elemental teacup tell. Dungeons thieves kiss red patronum dirigible treats cursed petrificus three.
+        </div>
       </div>
       <div class="chatFunctions">
-        <input type="text" name="" id="">
-        <button type="submit">Submit</button>
+        <div class="inputZone">
+          <input type="text" placeholder="Aa">
+          <button class="sendBTN" type="submit">
+            <i class="fa-regular fa-paper-plane"></i>
+          </button>
+        </div>
+        <button class="micBTN">
+          <i class="fa-solid fa-microphone"></i>
+        </button>
       </div>
       <div class="chatModes">
-        <button>preview text</button>
-        <button>click to record</button>
-        <button>auto record</button>
+        <button class="left">preview text</button>
+        <button class="center">click to record</button>
+        <button class="right">auto record</button>
       </div>
     </div>
   </main>

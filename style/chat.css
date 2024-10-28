@@ -1,4 +1,5 @@
 body {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,10 +8,148 @@ body main {
   height: 100vh;
   background-image: url("../images/Layer_1.svg");
   background-size: cover;
+  display: flex;
 }
 body main .aiCharactor {
-  width: 25%;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
 body main .aiCharactor img {
+  display: block;
+  width: 90%;
+}
+body main .chatContainer {
+  width: 65%;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+body main .chatContainer .bubblesContainer .bubbles, body main .chatContainer .bubblesContainer .userBubble, body main .chatContainer .bubblesContainer .aiBubble {
+  position: relative;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 80%;
+  margin: 1rem;
+}
+body main .chatContainer .bubblesContainer .bubbles::after, body main .chatContainer .bubblesContainer .userBubble::after, body main .chatContainer .bubblesContainer .aiBubble::after {
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  width: 20px;
+  height: 20px;
+}
+body main .chatContainer .bubblesContainer .aiBubble {
+  background: linear-gradient(90deg, rgb(247, 189, 160) 22%, rgb(159, 99, 233) 74%, rgb(101, 125, 241) 100%);
+  margin-right: auto;
+}
+body main .chatContainer .bubblesContainer .aiBubble::after {
+  left: -1rem;
+  background: #f7bda0;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
+          clip-path: polygon(100% 0, 100% 100%, 0 50%);
+}
+body main .chatContainer .bubblesContainer .userBubble {
+  background: white;
+  color: black;
+  margin-left: auto;
+}
+body main .chatContainer .bubblesContainer .userBubble::after {
+  right: -1rem;
+  background: white;
+  -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
+          clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+body main .chatContainer .chatFunctions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   width: 100%;
+}
+body main .chatContainer .chatFunctions .inputZone {
+  display: block;
+  position: relative;
+  margin-right: 3rem;
+  width: 80%;
+}
+body main .chatContainer .chatFunctions .inputZone input {
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background: white;
+}
+body main .chatContainer .chatFunctions .inputZone input:focus {
+  outline: none;
+}
+body main .chatContainer .chatFunctions .inputZone .sendBTN {
+  font-size: 1.4rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+body main .chatContainer .chatFunctions .micBTN {
+  font-size: 1.4rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: black;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+body main .chatContainer .chatFunctions .micBTN:focus {
+  outline: none;
+  background: rgb(136, 72, 151);
+  animation: pulseGlow 1s infinite;
+}
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgb(255, 255, 255);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+body main .chatContainer .chatModes {
+  display: flex;
+  justify-content: end;
+}
+body main .chatContainer .chatModes button {
+  border: 1px solid rgb(121, 116, 126);
+  background-color: rgb(196, 196, 196);
+  padding: 0.5rem 1rem;
+  margin: 0;
+  cursor: pointer;
+}
+body main .chatContainer .chatModes button.left {
+  border-radius: 100px 0 0 100px;
+}
+body main .chatContainer .chatModes button.center {
+  border-left: none;
+  border-right: none;
+}
+body main .chatContainer .chatModes button.right {
+  border-radius: 0 100px 100px 0;
+}
+body main .chatContainer .chatModes button:hover {
+  background-color: rgb(165, 165, 165);
+}
+body main .chatContainer .chatModes button:focus {
+  background-color: rgb(136, 72, 151);
+  color: white;
 }/*# sourceMappingURL=chat.css.map */
