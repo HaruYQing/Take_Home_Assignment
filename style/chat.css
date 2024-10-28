@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body main {
+  height: 100vh;
+  background-image: url("../images/Layer_1.svg");
+  background-size: cover;
+}
+body main .aiCharactor {
+  width: 25%;
+}
+body main .aiCharactor img {
+  width: 100%;
+}/*# sourceMappingURL=chat.css.map */
