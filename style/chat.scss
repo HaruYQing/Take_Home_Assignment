@@ -64,7 +64,6 @@ body {
                 .aiBubble {
                     @extend .bubbles;
                     background: linear-gradient(90deg, rgba(247,189,160,1) 22%, rgba(159,99,233,1) 74%, rgba(101,125,241,1) 100%);
-                    // color: white;
                     margin-right: auto;
                     
                     &::after {
