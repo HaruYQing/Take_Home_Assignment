@@ -26,10 +26,12 @@ body {
         }
         .chatContainer {
             width: 65%;
-            padding: 0 4rem;
+            padding: 1rem 4rem;
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            justify-content: end;
+            overflow-y: auto;
             .bubblesContainer {
                 .bubbles {
                     position: relative;

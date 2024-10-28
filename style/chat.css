@@ -22,10 +22,12 @@ body main .aiCharactor img {
 }
 body main .chatContainer {
   width: 65%;
-  padding: 0 4rem;
+  padding: 1rem 4rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  justify-content: end;
+  overflow-y: auto;
 }
 body main .chatContainer .bubblesContainer .bubbles, body main .chatContainer .bubblesContainer .userBubble, body main .chatContainer .bubblesContainer .aiBubble {
   position: relative;
