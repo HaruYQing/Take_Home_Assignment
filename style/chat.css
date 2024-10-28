@@ -27,7 +27,14 @@ body main .chatContainer {
   flex-direction: column;
   gap: 2rem;
   justify-content: end;
+}
+body main .chatContainer .bubblesContainer {
   overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+body main .chatContainer .bubblesContainer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 body main .chatContainer .bubblesContainer .bubbles, body main .chatContainer .bubblesContainer .userBubble, body main .chatContainer .bubblesContainer .aiBubble {
   position: relative;

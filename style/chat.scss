@@ -31,8 +31,13 @@ body {
             flex-direction: column;
             gap: 2rem;
             justify-content: end;
-            overflow-y: auto;
             .bubblesContainer {
+                overflow-y: auto;
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+                &::-webkit-scrollbar {
+                    display: none; /* Chrome, Safari and Opera */
+                  }
                 .bubbles {
                     position: relative;
                     padding: 2rem;

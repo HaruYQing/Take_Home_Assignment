@@ -1,4 +1,5 @@
 const submitBtn = document.querySelector(".sendBTN");
+const container = document.querySelector(".bubblesContainer");
 
 function showContent(e) {
   e.preventDefault();
@@ -10,6 +11,7 @@ function showContent(e) {
     newUserBubble.className = "userBubble";
     newUserBubble.textContent = userContent;
     bubblesContainer.appendChild(newUserBubble);
+    container.scrollTo(0, container.scrollHeight);
 
     setTimeout(() => {
       const newAiBubble = document.createElement("div");
@@ -17,7 +19,8 @@ function showContent(e) {
       newAiBubble.textContent =
         "Potter ipsum wand elf parchment wingardium. Pigwidgeon hedwig armchairs elemental teacup tell. Dungeons thieves kiss red patronum dirigible treats cursed petrificus three.";
       bubblesContainer.appendChild(newAiBubble);
-    }, 500);
+      container.scrollTo(0, container.scrollHeight);
+    }, 300);
 
     document.querySelector("#userInput").value = "";
   } else {
