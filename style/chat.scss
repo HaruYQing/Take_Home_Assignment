@@ -116,7 +116,7 @@ body {
                     align-items: center;
                     justify-content: center;
                     color: white;
-                    &:focus {
+                    &.recording {
                         outline: none;
                         background: $focusedBTN;
                         animation: pulseGlow 1s infinite;

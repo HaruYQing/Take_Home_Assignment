@@ -109,7 +109,7 @@ body main .chatContainer .chatFunctions .micBTN {
   justify-content: center;
   color: white;
 }
-body main .chatContainer .chatFunctions .micBTN:focus {
+body main .chatContainer .chatFunctions .micBTN.recording {
   outline: none;
   background: rgb(136, 72, 151);
   animation: pulseGlow 1s infinite;
