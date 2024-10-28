@@ -28,7 +28,7 @@ A responsive chat interface demo focusing on UI implementation and basic interac
 ## Setup
 
 1. Clone this repository
-2. Open index.html in your browser
+2. Open chat.html in your browser
 3. Start interacting with the interface!
 
 ## Notes
