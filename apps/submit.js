@@ -20,12 +20,23 @@ function showContent(e) {
         "Potter ipsum wand elf parchment wingardium. Pigwidgeon hedwig armchairs elemental teacup tell. Dungeons thieves kiss red patronum dirigible treats cursed petrificus three.";
       bubblesContainer.appendChild(newAiBubble);
       container.scrollTo(0, container.scrollHeight);
+      playTalkingAnimation();
     }, 300);
 
     document.querySelector("#userInput").value = "";
   } else {
     alert("Please enter your dialogue.");
   }
+}
+
+function playTalkingAnimation() {
+  const avatarContainer = document.querySelector(".aiCharactor");
+  avatarContainer.classList.add("talking");
+
+  // 3秒後停止動畫
+  setTimeout(() => {
+    avatarContainer.classList.remove("talking");
+  }, 3000);
 }
 
 submitBtn.addEventListener("click", showContent);

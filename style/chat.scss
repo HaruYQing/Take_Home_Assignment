@@ -1,182 +1,219 @@
 $outline: rgba(121, 116, 126, 1);
 $unFocusBTN: rgb(196, 196, 196);
 $hoveredBTN: rgba(165, 165, 165, 1);
-$default: rgba(0,0,0,1);
+$default: rgba(0, 0, 0, 1);
 $focusedBTN: rgba(136, 72, 151, 1);
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    main {
-        height: 100vh;
-        background-image: url("../images/Layer_1.svg");
-        background-size: cover;
-        display: flex;
-        .aiCharactor {
-            width: 35%;
-            display: flex;
-            justify-content: center;
-            align-items: end;
-            img {
-                display: block;
-                width: 90%;
-            }
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  main {
+    height: 100vh;
+    background-image: url("../images/Layer_1.svg");
+    background-size: cover;
+    display: flex;
+    .aiCharactor {
+      width: 35%;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      position: relative;
+      .avatarBase {
+        display: block;
+        width: 90%;
+      }
+      .mouseContainer {
+        z-index: 100;
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translate(-49%, -50%);
+        width: 90%;
+        .avatarMouse {
+          width: 98%;
+          position: absolute;
+          left: 0;
+          bottom: 2px;
+          &.mOpen {
+            opacity: 0;
+          }
         }
-        .chatContainer {
-            width: 65%;
-            padding: 1rem 4rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            justify-content: end;
-            .bubblesContainer {
-                overflow-y: auto;
-                -ms-overflow-style: none;  /* IE and Edge */
-                scrollbar-width: none;  /* Firefox */
-                &::-webkit-scrollbar {
-                    display: none; /* Chrome, Safari and Opera */
-                  }
-                .bubbles {
-                    position: relative;
-                    padding: 2rem;
-                    border-radius: 20px;
-                    max-width: 80%;
-                    margin: 1rem;
-                    opacity: 1;
-                    transition: opacity 0.3s ease;
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: 15px;
-                        width: 20px;
-                        height: 20px;
-                      }
-                    &.medium-opacity {
-                    opacity: 0.6;
-                    }
-                    
-                    &.low-opacity {
-                    opacity: 0.2;
-                    }
-                }
-                .aiBubble {
-                    @extend .bubbles;
-                    background: linear-gradient(90deg, rgba(247,189,160,1) 22%, rgba(159,99,233,1) 74%, rgba(101,125,241,1) 100%);
-                    margin-right: auto;
-                    
-                    &::after {
-                      left: -1rem;
-                      background: #f7bda0;
-                      clip-path: polygon(100% 0, 100% 100%, 0 50%);
-                    }
-                }
-                .userBubble {
-                    @extend .bubbles;
-                    background: white;
-                    color: black;
-                    margin-left: auto;
-                    
-                    &::after {
-                      right: -1rem;
-                      background: white;
-                      clip-path: polygon(0 0, 100% 50%, 0 100%);
-                    }
-                }
-            }
-            .chatFunctions {
-                display: flex;
-                gap: 0.5rem;
-                align-items: center;
-                width: 100%;
-                .inputZone {
-                    display: block;
-                    position: relative;
-                    margin-right: 3rem;
-                    width: 80%;
-                    input {
-                        font-size: 1.2rem;
-                        width: 100%;
-                        padding: 0.8rem 1rem;
-                        border-radius: 10px;
-                        border: none;
-                        background: white;
-                        
-                        &:focus {
-                            outline: none;
-                        }
-                    }
-                    .sendBTN {
-                        font-size: 1.4rem;
-                        position: absolute;
-                        right: 0;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        background: none;
-                        border: none;
-                        cursor: pointer;
-                        padding: 5px;
-                    }
-                }
-                .micBTN {
-                    font-size: 1.4rem;
-                    width: 4rem;
-                    height: 4rem;
-                    border-radius: 50%;
-                    background: black;
-                    border: none;
-                    cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: white;
-                    &.recording {
-                        outline: none;
-                        background: $focusedBTN;
-                        animation: pulseGlow 1s infinite;
-                    }
-                }
-                @keyframes pulseGlow {
-                    0% {
-                      box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
-                    }
-                    70% {
-                      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-                    }
-                    100% {
-                      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-                    }
-                  }
-            }
-            .chatModes {
-                display: flex;
-                justify-content: end;
-                button {
-                    border: 1px solid $outline;
-                    background-color: $unFocusBTN;
-                    padding: 0.5rem 1rem;
-                    margin: 0;
-                    cursor: pointer;
-                    &.left {
-                        border-radius: 100px 0 0 100px;
-                    }
-                    &.center {
-                        border-left: none;
-                        border-right: none;
-                    }
-                    &.right {
-                        border-radius: 0 100px 100px 0;
-                    }
-                    &:hover {
-                        background-color: $hoveredBTN;  
-                    }
-                    &:focus {
-                        background-color: $focusedBTN;
-                        color: white;
-                    }
-                }
-            }
+      }
+      &.talking {
+        .mOpen {
+          animation: talking 0.6s ease-in-out infinite reverse;
         }
+      }
     }
+    @keyframes talking {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+    .chatContainer {
+      width: 65%;
+      padding: 1rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: end;
+      .bubblesContainer {
+        overflow-y: auto;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+          display: none; /* Chrome, Safari and Opera */
+        }
+        .bubbles {
+          position: relative;
+          padding: 2rem;
+          border-radius: 20px;
+          max-width: 80%;
+          margin: 1rem;
+          opacity: 1;
+          transition: opacity 0.3s ease;
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 15px;
+            width: 20px;
+            height: 20px;
+          }
+          &.medium-opacity {
+            opacity: 0.6;
+          }
+
+          &.low-opacity {
+            opacity: 0.2;
+          }
+        }
+        .aiBubble {
+          @extend .bubbles;
+          background: linear-gradient(
+            90deg,
+            rgba(247, 189, 160, 1) 22%,
+            rgba(159, 99, 233, 1) 74%,
+            rgba(101, 125, 241, 1) 100%
+          );
+          margin-right: auto;
+
+          &::after {
+            left: -1rem;
+            background: #f7bda0;
+            clip-path: polygon(100% 0, 100% 100%, 0 50%);
+          }
+        }
+        .userBubble {
+          @extend .bubbles;
+          background: white;
+          color: black;
+          margin-left: auto;
+
+          &::after {
+            right: -1rem;
+            background: white;
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+          }
+        }
+      }
+      .chatFunctions {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        width: 100%;
+        .inputZone {
+          display: block;
+          position: relative;
+          margin-right: 3rem;
+          width: 80%;
+          input {
+            font-size: 1.2rem;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            border: none;
+            background: white;
+
+            &:focus {
+              outline: none;
+            }
+          }
+          .sendBTN {
+            font-size: 1.4rem;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+          }
+        }
+        .micBTN {
+          font-size: 1.4rem;
+          width: 4rem;
+          height: 4rem;
+          border-radius: 50%;
+          background: black;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          &.recording {
+            outline: none;
+            background: $focusedBTN;
+            animation: pulseGlow 1s infinite;
+          }
+        }
+        @keyframes pulseGlow {
+          0% {
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+          }
+          70% {
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+          }
+        }
+      }
+      .chatModes {
+        display: flex;
+        justify-content: end;
+        button {
+          border: 1px solid $outline;
+          background-color: $unFocusBTN;
+          padding: 0.5rem 1rem;
+          margin: 0;
+          cursor: pointer;
+          &.left {
+            border-radius: 100px 0 0 100px;
+          }
+          &.center {
+            border-left: none;
+            border-right: none;
+          }
+          &.right {
+            border-radius: 0 100px 100px 0;
+          }
+          &:hover {
+            background-color: $hoveredBTN;
+          }
+          &:focus {
+            background-color: $focusedBTN;
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }
