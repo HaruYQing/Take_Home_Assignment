@@ -20,6 +20,11 @@ A responsive chat interface demo focusing on UI implementation and basic interac
 - Integrated SVG assets (provided) for visual elements
 - Pill-shaped button design
 
+### Animation Features
+- Mouth animation synchronized with AI responses
+- Glowing horn effect during speech
+- 3-second animation sequence triggered by AI message bubbles
+
 ### JavaScript Functionality
 - Text input handling and message display
 - Basic microphone permission request demonstration

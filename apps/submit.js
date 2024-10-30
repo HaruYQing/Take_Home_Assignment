@@ -31,11 +31,14 @@ function showContent(e) {
 
 function playTalkingAnimation() {
   const avatarContainer = document.querySelector(".aiCharactor");
+  const avatarHorn = document.querySelector(".avatarHorn");
   avatarContainer.classList.add("talking");
+  avatarHorn.classList.add("glowing");
 
   // 3秒後停止動畫
   setTimeout(() => {
     avatarContainer.classList.remove("talking");
+    avatarHorn.classList.remove("glowing");
   }, 3000);
 }
 

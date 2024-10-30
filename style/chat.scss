@@ -14,15 +14,36 @@ body {
     background-image: url("../images/Layer_1.svg");
     background-size: cover;
     display: flex;
+    overflow: hidden;
     .aiCharactor {
       width: 35%;
       display: flex;
       justify-content: center;
       align-items: end;
       position: relative;
+      bottom: -10px;
       .avatarBase {
         display: block;
         width: 90%;
+      }
+      .avatarHorn {
+        display: block;
+        position: absolute;
+        width: 90%;
+        bottom: 0;
+        z-index: 10;
+        &.glowing {
+          animation: glowing 0.8s ease-in-out infinite reverse;
+        }
+      }
+      @keyframes glowing {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
       }
       .mouseContainer {
         z-index: 100;

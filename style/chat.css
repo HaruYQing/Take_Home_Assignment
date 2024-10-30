@@ -9,6 +9,7 @@ body main {
   background-image: url("../images/Layer_1.svg");
   background-size: cover;
   display: flex;
+  overflow: hidden;
 }
 body main .aiCharactor {
   width: 35%;
@@ -16,10 +17,29 @@ body main .aiCharactor {
   justify-content: center;
   align-items: end;
   position: relative;
+  bottom: -10px;
 }
 body main .aiCharactor .avatarBase {
   display: block;
   width: 90%;
+}
+body main .aiCharactor .avatarHorn {
+  display: block;
+  position: absolute;
+  width: 90%;
+  bottom: 0;
+  z-index: 10;
+}
+body main .aiCharactor .avatarHorn.glowing {
+  animation: glowing 0.8s ease-in-out infinite reverse;
+}
+@keyframes glowing {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 body main .aiCharactor .mouseContainer {
   z-index: 100;
